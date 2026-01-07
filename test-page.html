@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG Contrast Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .test-section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .test-section h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+    
+    .color-test {
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+    
+    /* Good Contrast Examples (AA Pass) */
+    .good-1 {
+      background: #ffffff;
+      color: #000000;
+    }
+    
+    .good-2 {
+      background: #0066cc;
+      color: #ffffff;
+    }
+    
+    .good-3 {
+      background: #2e7d32;
+      color: #ffffff;
+    }
+    
+    /* Poor Contrast Examples (AA Fail) */
+    .poor-1 {
+      background: #ffffff;
+      color: #cccccc;
+    }
+    
+    .poor-2 {
+      background: #ffff00;
+      color: #ffffff;
+    }
+    
+    .poor-3 {
+      background: #87ceeb;
+      color: #ffffff;
+    }
+    
+    /* Large Text Examples */
+    .large-text {
+      font-size: 24px;
+      font-weight: normal;
+    }
+    
+    .large-bold {
+      font-size: 19px;
+      font-weight: bold;
+    }
+    
+    /* AAA Examples */
+    .aaa-pass {
+      background: #000000;
+      color: #ffffff;
+    }
+    
+    .aaa-fail {
+      background: #595959;
+      color: #ffffff;
+    }
+    
+    /* UI Component Examples */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      border: 2px solid;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .button-good {
+      background: #0066cc;
+      color: #ffffff;
+      border-color: #0066cc;
+    }
+    
+    .button-poor {
+      background: #ffffff;
+      color: #dddddd;
+      border-color: #dddddd;
+    }
+    
+    .info-box {
+      background: #e3f2fd;
+      border: 1px solid #2196f3;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+      color: #1565c0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>WCAG Color Contrast Test Page</h1>
+    
+    <div class="test-section">
+      <h2>✅ Good Contrast Examples (AA Pass)</h2>
+      <div class="color-test good-1">
+        <strong>Black on White</strong><br>
+        Contrast Ratio: 21:1 - Excellent contrast, passes both AA and AAA
+      </div>
+      <div class="color-test good-2">
+        <strong>White on Blue</strong><br>
+        Contrast Ratio: ~8:1 - Good contrast, passes both AA and AAA
+      </div>
+      <div class="color-test good-3">
+        <strong>White on Green</strong><br>
+        Contrast Ratio: ~7:1 - Good contrast, passes both AA and AAA
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h2>❌ Poor Contrast Examples (AA Fail)</h2>
+      <div class="color-test poor-1">
+        <strong>Light Gray on White</strong><br>
+        Contrast Ratio: ~1.6:1 - Very poor contrast, fails AA and AAA
+      </div>
+      <div class="color-test poor-2">
+        <strong>White on Yellow</strong><br>
+        Contrast Ratio: ~1.1:1 - Extremely poor contrast, fails AA and AAA
+      </div>
+      <div class="color-test poor-3">
+        <strong>White on Light Blue</strong><br>
+        Contrast Ratio: ~2.8:1 - Poor contrast for normal text, may pass for large text only
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h2>📏 Large Text Examples</h2>
+      <div class="color-test poor-3 large-text">
+        <strong>Large Text (24px)</strong><br>
+        This text is 24px, so it qualifies as "large text" and only needs 3:1 contrast ratio for AA
+      </div>
+      <div class="color-test poor-3 large-bold">
+        <strong>Large Bold Text (19px bold)</strong><br>
+        This text is 19px and bold, so it qualifies as "large text" and only needs 3:1 contrast ratio
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h2>⭐ AAA Compliance Examples</h2>
+      <div class="color-test aaa-pass">
+        <strong>White on Black</strong><br>
+        Contrast Ratio: 21:1 - Perfect contrast, passes AAA (7:1 required for normal text)
+      </div>
+      <div class="color-test aaa-fail">
+        <strong>White on Dark Gray</strong><br>
+        Contrast Ratio: ~5.5:1 - Passes AA (4.5:1) but fails AAA (7:1) for normal text
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h2>🔘 UI Component Examples</h2>
+      <p>Buttons and interactive components need at least 3:1 contrast ratio:</p>
+      <button class="button button-good">Good Button (3:1+)</button>
+      <button class="button button-poor">Poor Button (&lt;3:1)</button>
+      
+      <div class="info-box">
+        <strong>Info Box</strong><br>
+        This is an example of a UI component with good color contrast
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h2>📊 Mixed Content Example</h2>
+      <p style="color: #333; background: white; padding: 10px;">
+        This paragraph has <span style="color: #0066cc;">blue links</span> and 
+        <span style="color: #d32f2f;">red error text</span> and 
+        <span style="color: #ffa726;">orange warnings</span>. 
+        The extension should detect all these different color combinations and 
+        calculate their individual contrast ratios against the white background.
+      </p>
+      <p style="color: white; background: #333; padding: 10px;">
+        This paragraph has a dark background with 
+        <span style="color: #64b5f6;">light blue links</span> and 
+        <span style="color: #ef5350;">light red text</span> that should all be analyzed 
+        separately for contrast compliance.
+      </p>
+    </div>
+    
+    <div class="test-section">
+      <h2>ℹ️ How to Use This Test Page</h2>
+      <ol>
+        <li>Install the WCAG Color Contrast Checker extension</li>
+        <li>Click the extension icon in your browser toolbar</li>
+        <li>The extension will analyze all color combinations on this page</li>
+        <li>Review the results to see which combinations pass or fail WCAG standards</li>
+        <li>Compare the extension's findings with the labels above</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

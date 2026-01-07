@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG Contrast Checker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>WCAG Contrast Checker</h1>
+      <button id="analyzeBtn" class="btn-primary">Re-analyze Page</button>
+    </header>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Analyzing page colors...</p>
+    </div>
+
+    <div id="error" class="error hidden">
+      <p id="errorMessage"></p>
+    </div>
+
+    <div id="summary" class="summary hidden">
+      <div class="summary-stats">
+        <div class="stat">
+          <span class="stat-label">Color Pairs</span>
+          <span class="stat-value" id="totalPairs">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">AA Pass</span>
+          <span class="stat-value stat-pass" id="aaPass">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">AAA Pass</span>
+          <span class="stat-value stat-pass" id="aaaPass">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Failures</span>
+          <span class="stat-value stat-fail" id="failures">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="filters" class="filters hidden">
+      <label>
+        <input type="checkbox" id="filterFail" checked>
+        Show failures only
+      </label>
+      <label>
+        <input type="checkbox" id="filterPass" checked>
+        Show passes
+      </label>
+    </div>
+
+    <div id="results" class="results">
+      <!-- Results will be populated here -->
+    </div>
+
+    <footer>
+      <div class="legend">
+        <div class="legend-item">
+          <span class="badge badge-pass">AA</span> = 4.5:1 normal, 3:1 large text
+        </div>
+        <div class="legend-item">
+          <span class="badge badge-pass">AAA</span> = 7:1 normal, 4.5:1 large text
+        </div>
+        <div class="legend-item">
+          Large text = 18pt+ (24px) or 14pt+ (18.66px) bold
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
