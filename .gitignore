@@ -3,6 +3,7 @@
 *.pem
 *.xpi
 *.zip
+*.tar.gz
 web-ext-artifacts/
 
 # Development
